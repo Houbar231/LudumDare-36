@@ -16,9 +16,5 @@ public class UtilityScriptsReference : MonoBehaviour {
         Before = SBefore.Split(',');
         After = SAfter.Split(',');
         Nouns = SNouns.Split(',');
-
-        for(int i = 0; i < 100; i++) {
-            Debug.Log(NameGen.Group());
-        }
     }
 }
