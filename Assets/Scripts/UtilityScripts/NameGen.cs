@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public static class NameGen {
-    public static string[] Before = { "Disloyal", "Convinient", "Armoured", "Incinerating", "Alpha", "Bookish", "Great" };
+    public static string[] Before = { "Disloyal", "Convinient", "Armoured", "Incinerating", "Alpha", "Bookish", "Great", "Brave" };
     public static string[] After = { "Speaking", "Slapping", "Hunting", "Fleeing", "Tumbling", "Shaking","Burning"};
     public static string[] Nouns = { "Hammer", "Point","Syrups","Horn","Breath","Bolts","Cats","Wheels"};
     public static string Person(string Profession, int Format01) {
