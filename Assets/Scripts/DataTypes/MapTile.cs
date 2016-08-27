@@ -14,6 +14,7 @@ public class MapTile {
 }
 public class TileData {
     public int x, y;
+    public bool IsWalkable = true; 
     public TileData(int x, int y) {
         this.x = x;
         this.y = y;

@@ -17,7 +17,6 @@ public class Mouse : MonoBehaviour {
 
             if(Input.GetMouseButtonDown(0) && MouseX >= 0 && MouseX < GeneralReference.r.Width && MouseY >= 0 && MouseY < GeneralReference.r.Height) {
                 SelectedTile = Map.Instance.Tiles[MouseX, MouseY];
-                Debug.Log(SelectedTile.TileGO.name);
             }
         //}
     }
