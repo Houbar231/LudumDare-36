@@ -24,5 +24,9 @@ public class Money : MonoBehaviour {
 
 	void Update () {
         MoneyCounter.text = ActualMoney.ToString();
+        foreach (EnemyUnit eu in Enemy.Instance.EnemiesOnMap)
+        {
+            eu.OnEnemyDie += (EnemyUnit) => { AddMoney(1); };
+        }
 	}
 }
