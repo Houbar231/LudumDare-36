@@ -6,6 +6,8 @@ public class SpriteReference : MonoBehaviour {
 
     public Sprite DefaultTileSprite;
     public Sprite Enemysprite;
+    public Sprite TowerSprite;
+    public Sprite Mainsprite;
 
     void Awake() {
         r = this;
