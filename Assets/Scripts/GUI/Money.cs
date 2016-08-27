@@ -7,6 +7,14 @@ public class Money : MonoBehaviour {
     public Text MoneyCounter;
     public static Money Instance;
 
+    void Start()
+    {
+        foreach (EnemyUnit eu in Enemy.Instance.EnemiesOnMap)
+        {
+            eu.OnEnemyDie += (EnemyUnit) => { AddMoney(1); };
+        }
+    }
+
     void Awake()
     {
         Instance = this;
@@ -24,9 +32,5 @@ public class Money : MonoBehaviour {
 
 	void Update () {
         MoneyCounter.text = ActualMoney.ToString();
-        foreach (EnemyUnit eu in Enemy.Instance.EnemiesOnMap)
-        {
-            eu.OnEnemyDie += (EnemyUnit) => { AddMoney(1); };
-        }
 	}
 }
