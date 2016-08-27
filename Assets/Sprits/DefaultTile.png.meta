@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Square.png.meta
-guid: e78f54ab4687c944a9be168db0352cb9
-timeCreated: 1472281637
-=======
-guid: b527bb05a94dee244868dcd4d4c1cdaf
-timeCreated: 1472280080
->>>>>>> Enemy-Spawning:Assets/Sprits/DefaultTile.png.meta
-licenseType: Free
+guid: 5632cc5d8f59ac04db1da6fe4028181c
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -34,13 +27,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-<<<<<<< HEAD:Assets/Square.png.meta
-    filterMode: -1
-    aniso: -1
-=======
-    filterMode: 0
+    filterMode: 1
     aniso: 16
->>>>>>> Enemy-Spawning:Assets/Sprits/DefaultTile.png.meta
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -54,11 +42,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-<<<<<<< HEAD:Assets/Square.png.meta
-  spritePixelsToUnits: 100
-=======
-  spritePixelsToUnits: 16
->>>>>>> Enemy-Spawning:Assets/Sprits/DefaultTile.png.meta
+  spritePixelsToUnits: 15
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8

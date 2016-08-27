@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Managers\Enemy.cs" />
     <Compile Include="Assets\Scripts\Managers\Map.cs" />
     <Compile Include="Assets\Scripts\Managers\Mouse.cs" />
+    <Compile Include="Assets\Scripts\Managers\OneManagerToRuleThemAll.cs" />
     <Compile Include="Assets\Scripts\References\GeneralReference.cs" />
     <Compile Include="Assets\Scripts\References\SpriteReference.cs" />
   </ItemGroup>

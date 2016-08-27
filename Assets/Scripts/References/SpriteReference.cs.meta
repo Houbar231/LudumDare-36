@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: b85a9489012fba24985f954c401a6c2f
-timeCreated: 1472281631
+timeCreated: 1472286164
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - DefaultTileSprite: {fileID: 21300000, guid: 5632cc5d8f59ac04db1da6fe4028181c,
+      type: 3}
+  - Enemysprite: {fileID: 21300000, guid: 84eaa4df02bac854e84aed7128ee575d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
