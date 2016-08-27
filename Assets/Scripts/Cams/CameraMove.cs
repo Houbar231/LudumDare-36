@@ -2,6 +2,11 @@
 using System.Collections;
 
 public class CameraMove : MonoBehaviour {
+    private Vector3 movement;
+ -    public Camera MainCamera;
+ -    public bool Arrows = true;
+ -    public float speed = 1.0f;
+ -    private float movementX, movementY;
     public float speed = 1;
 	
 	// Update is called once per frame
