@@ -80,7 +80,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\DataTypes\MapTile.cs" />
     <Compile Include="Assets\Scripts\Managers\Map.cs" />
-    <Compile Include="Assets\Scripts\Map.cs" />
+    <Compile Include="Assets\Scripts\Managers\Pathfinding.cs" />
+    <Compile Include="Assets\Scripts\References\GeneralReference.cs" />
+    <Compile Include="Assets\Scripts\References\SpriteReference.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
