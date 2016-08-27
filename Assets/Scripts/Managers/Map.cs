@@ -2,14 +2,18 @@
 using System.Collections;
 
 public class Map : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public static Map Instance;
+    public int Width, Height;
+    public MapTile[,] Tiles;
+    void Awake() {
+        Instance = this;
+    }
+    void OnEnable() {
+        Tiles = new MapTile[Width, Height];
+        for(int i = 0; i < Width; i++) {
+            for(int j = 0; j < Height; j++) {
+                Tiles[i, j] = new MapTile(i, j);
+            }
+        }
+    }
 }
