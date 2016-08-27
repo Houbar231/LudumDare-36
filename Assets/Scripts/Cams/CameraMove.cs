@@ -10,7 +10,7 @@ public class CameraMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Arrows == true)
+        if (Arrows)
         {
                 movementX = Input.GetAxisRaw("Vertical") * speed;
                 movementY = Input.GetAxisRaw("Horizontal") * speed;
