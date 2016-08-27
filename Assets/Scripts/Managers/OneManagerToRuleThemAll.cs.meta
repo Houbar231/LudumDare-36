@@ -1,10 +1,6 @@
 fileFormatVersion: 2
-guid: fe0f812355657b94383dda678e63e26e
-<<<<<<< HEAD
-timeCreated: 1472281631
-=======
-timeCreated: 1472277148
->>>>>>> Enemy-Spawning
+guid: 4ef05ca5e7574e74dbc5b04bf1225fec
+timeCreated: 1472277213
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
