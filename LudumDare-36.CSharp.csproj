@@ -66,7 +66,6 @@
     <Compile Include="Assets\Scripts\Cams\CameraMove.cs" />
     <Compile Include="Assets\Scripts\DataTypes\MapTile.cs" />
     <Compile Include="Assets\Scripts\Managers\Map.cs" />
-    <Compile Include="Assets\Scripts\References\SpriteReference.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
