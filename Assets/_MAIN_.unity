@@ -190,9 +190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ab4a1ae24d476469b6d76883ce0dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   MainCamera: {fileID: 190332961}
   Arrows: 1
   speed: 0.01
+=======
+  speed: 0.3
+>>>>>>> 6be46e4f092d306a38b832441ad559a7d299d17e
 --- !u!1 &532510729
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85a9489012fba24985f954c401a6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultTileSprite: {fileID: 21300000, guid: e78f54ab4687c944a9be168db0352cb9, type: 3}
+  DefaultTileSprite: {fileID: 21300000, guid: b527bb05a94dee244868dcd4d4c1cdaf, type: 3}
+  Enemysprite: {fileID: 21300000, guid: 84eaa4df02bac854e84aed7128ee575d, type: 3}
 --- !u!114 &674554114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +392,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &872111483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 872111485}
+  - 114: {fileID: 872111484}
+  m_Layer: 0
+  m_Name: OneManagerToRuleThemAll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &872111484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872111483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef05ca5e7574e74dbc5b04bf1225fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &872111485
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872111483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &1336649723
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +441,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1336649724}
   - 114: {fileID: 1336649725}
+  - 114: {fileID: 1336649726}
   m_Layer: 0
   m_Name: PressChecker
   m_TagString: Untagged
@@ -425,6 +471,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 910c619d84974ef448de8d03af83fb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1336649726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1336649723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0f812355657b94383dda678e63e26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1441452181

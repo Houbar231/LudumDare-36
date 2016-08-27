@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 2468f89d06902cf4f8f85d615cb9c0ff
 folderAsset: yes
+<<<<<<< HEAD:Assets/Font-Calibri.meta
 timeCreated: 1472282192
+=======
+timeCreated: 1472281630
+>>>>>>> 6be46e4f092d306a38b832441ad559a7d299d17e:Assets/Scripts/Building.meta
 licenseType: Free
 DefaultImporter:
   userData: 
