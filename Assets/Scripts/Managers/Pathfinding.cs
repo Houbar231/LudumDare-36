@@ -23,6 +23,7 @@ public class Pathfinding : MonoBehaviour {
                     if(i == DestX && j == DestY) {
                         continue;
                     }
+                    //Hello
                     if(! NextTileToDest.ContainsKey(Map.Instance.Tiles[i, j])) {
                         ToBeChecked.Enqueue(Map.Instance.Tiles[i, j]);
                         NextTileToDest.Add(Map.Instance.Tiles[i, j], ToBeCheckedNext);
