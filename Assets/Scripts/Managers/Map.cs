@@ -3,15 +3,14 @@ using System.Collections;
 
 public class Map : MonoBehaviour {
     public static Map Instance;
-    public int Width, Height;
     public MapTile[,] Tiles;
     void Awake() {
         Instance = this;
     }
-    void OnEnable() {
-        Tiles = new MapTile[Width, Height];
-        for(int i = 0; i < Width; i++) {
-            for(int j = 0; j < Height; j++) {
+    void Start() {
+        Tiles = new MapTile[GeneralReference.r.Width, GeneralReference.r.Height];
+        for(int i = 0; i < GeneralReference.r.Width; i++) {
+            for(int j = 0; j < GeneralReference.r.Height; j++) {
                 Tiles[i, j] = new MapTile(i, j);
             }
         }
