@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Cams\CameraMove.cs" />
     <Compile Include="Assets\Scripts\DataTypes\MapTile.cs" />
     <Compile Include="Assets\Scripts\GUI\BTN_build.cs" />
+    <Compile Include="Assets\Scripts\Managers\Bullets.cs" />
     <Compile Include="Assets\Scripts\Managers\Enemy.cs" />
     <Compile Include="Assets\Scripts\Managers\Map.cs" />
     <Compile Include="Assets\Scripts\Managers\Mouse.cs" />
