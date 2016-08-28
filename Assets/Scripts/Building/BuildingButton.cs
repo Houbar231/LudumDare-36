@@ -12,6 +12,7 @@ using System.Collections;
         public Text Bmode_text;
         public Button Bmode;
         public string BuildingName;
+        public GameObject BuildingMenuHider;
         public void Awake()
         {
             Instance = this;
@@ -22,6 +23,7 @@ using System.Collections;
             Debug.Log("Button Pressed");
             HideOnStart.Instance.BHider.SetActive(false);
             buildingMode = false;
+        BuildingMenuHider.SetActive(true);
         }
 
         public void OnClick()
@@ -29,9 +31,10 @@ using System.Collections;
             BuildingShop.Instance.CloseShop();
             buildingMode = true;
 
-            HideOnStart.Instance.BHider.SetActive(false);
+            //HideOnStart.Instance.BHider.SetActive(false);
             Bmode_text.text = bmode_Text;
             HideOnStart.Instance.BHider.SetActive(true);
+            BuildingMenuHider.SetActive(false);
         }
 
         void FixedUpdate()
