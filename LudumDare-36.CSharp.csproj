@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Cams\CameraMove.cs" />
     <Compile Include="Assets\Scripts\DataTypes\MapTile.cs" />
     <Compile Include="Assets\Scripts\GUI\BTN_build.cs" />
+    <Compile Include="Assets\Scripts\GUI\HideOnStart.cs" />
     <Compile Include="Assets\Scripts\GUI\Money.cs" />
     <Compile Include="Assets\Scripts\Managers\Bullets.cs" />
     <Compile Include="Assets\Scripts\Managers\Enemy.cs" />
