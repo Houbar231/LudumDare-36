@@ -24,6 +24,7 @@ public class Map : MonoBehaviour {
         for(int i = 0; i < 4; i++) {
             Enemy.Instance.SpawnEnemyUnit();
         }
+        new BulletShooter360Dgr(4, 4);
         Bullets.Instance.AllShoot();
     }
     public List<MapTile> GetEdgeTiles() {

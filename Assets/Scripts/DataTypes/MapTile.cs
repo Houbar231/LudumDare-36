@@ -8,7 +8,7 @@ public class MapTile {
     public MapTile(int x, int y) {
         Data = new TileData(x, y);
         TileGO = new GameObject("Tile " + x + ", " + y);
-        TileGO.transform.position = new Vector3(x, y);
+        TileGO.transform.position = new Vector3(x, y,0.1f);
         TileGO.AddComponent<SpriteRenderer>().sprite = SpriteReference.r.DefaultTileSprite;
     }
 }
