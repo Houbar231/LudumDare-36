@@ -59,12 +59,12 @@ public class EnemyUnit {
         Data = new EnemyData(x, y);
     }
     public void MoveToDest() {
-        if(Map.Instance == null)
-            Debug.Log("A");
-        if(Data.x != Map.Instance.DestTile.Data.x || Data.y != Map.Instance.DestTile.Data.y) {
-            GO.transform.position = new Vector3(Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.x, Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.y, -0.001f);
-            Data.x = Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.x;
-            Data.y = Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.y;
+        if(Map.Instance.IsPathfindingComplete) {
+            if(Data.x != Map.Instance.DestTile.Data.x || Data.y != Map.Instance.DestTile.Data.y) {
+                GO.transform.position = new Vector3(Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.x, Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.y, -0.001f);
+                Data.x = Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.x;
+                Data.y = Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.y;
+            }
         }
     }
     public void TakeDamage(float Damage) {

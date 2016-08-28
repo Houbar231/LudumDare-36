@@ -6,6 +6,8 @@ public class Map : MonoBehaviour {
     public static Map Instance;
     public MapTile[,] Tiles;
     public MapTile DestTile;
+    [System.NonSerialized]
+    public bool IsPathfindingComplete = false;
     public Dictionary<MapTile, MapTile> NextToDestTile;
     void Awake() {
         Instance = this;
@@ -39,6 +41,8 @@ public class Map : MonoBehaviour {
         return ret;
     }
     public void SetUpPathfinding() {
+        IsPathfindingComplete = false;
+        NextToDestTile.Clear();
         Queue<MapTile> ToBeSearched = new Queue<MapTile>();
 
         ToBeSearched.Enqueue(DestTile);
@@ -48,13 +52,15 @@ public class Map : MonoBehaviour {
             for(int i = Mathf.Max(ToBeSearchedNext.Data.x-1,0); i <= Mathf.Min(ToBeSearchedNext.Data.x+1, GeneralReference.r.Width-1); i++) {
                 for(int j = Mathf.Max(ToBeSearchedNext.Data.y - 1, 0); j <= Mathf.Min(ToBeSearchedNext.Data.y + 1, GeneralReference.r.Height-1); j++) {
                     if(! NextToDestTile.ContainsKey(Tiles[i,j])) {
-                        if(Tiles[i, j].Data.IsWalkable) {
+                        if(ToBeSearchedNext.Data.IsWalkable) {
                             NextToDestTile.Add(Tiles[i, j], ToBeSearchedNext);
                             ToBeSearched.Enqueue(Tiles[i, j]);
+                            Debug.Log("Dneuifsuyjcisthárdbgdrbhoedssvadbhorgiefgzioioqdfbuzio");
                         }
                     }
                 }
             }
         }
+        IsPathfindingComplete = true;
     }
 }

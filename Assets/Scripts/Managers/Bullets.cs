@@ -36,7 +36,7 @@ public class BulletShooter360Dgr : Shooter{
     public Sprite BuildingSprite;
     public GameObject GO;
     public float range = 10;
-    public float AvgDmg = 50;
+    public float AvgDmg = 20;
     public float DmgSpread = 10;
     public float Firerate = 0.2f;
     public EnemyUnit Target = null;

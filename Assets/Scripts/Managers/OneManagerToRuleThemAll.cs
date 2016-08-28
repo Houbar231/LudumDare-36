@@ -36,20 +36,24 @@ public class OneManagerToRuleThemAll : MonoBehaviour {
     }
 
     public IEnumerator Every02Sec() {
+        yield return new WaitForSeconds(1);
         while(IsRunning) {
             
             yield return new WaitForSeconds(0.2f);
         }
     }
     public IEnumerator Every05Sec() {
+        yield return new WaitForSeconds(1);
         while(IsRunning) {
             Enemy.Instance.MoveAll();
             yield return new WaitForSeconds(0.5f);
         }
     }
     public IEnumerator Every1Sec() {
+        yield return new WaitForSeconds(1);
         while(IsRunning) {
             Bullets.Instance.TryFindTargets();
+            Enemy.Instance.SpawnEnemyUnit();
             yield return new WaitForSeconds(1);
         }
     }
