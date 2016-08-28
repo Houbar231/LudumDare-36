@@ -8,6 +8,7 @@ public class SpriteReference : MonoBehaviour {
     public Sprite Enemysprite;
     public Sprite TowerSprite;
     public Sprite Mainsprite;
+    public Sprite SelSprite;
 
 
     void Awake() {
