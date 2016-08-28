@@ -1878,16 +1878,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 814567654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 2097155136}
-  m_RootOrder: 3
+  m_Father: {fileID: 2038750731}
+  m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -42.700012, y: 44.800003}
+  m_AnchoredPosition: {x: 931.3, y: 44.800003}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &814567656
@@ -2421,7 +2421,7 @@ RectTransform:
   m_Children:
   - {fileID: 1589052441}
   m_Father: {fileID: 2097155136}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 237}
@@ -2441,34 +2441,6 @@ MonoBehaviour:
   BHider: {fileID: 1079759112}
   Bmode: {fileID: 1589052442}
   Visible: 0
---- !u!1 &1111455179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1111455180}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1111455180
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1111455179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
 --- !u!1001 &1118723641
 Prefab:
   m_ObjectHideFlags: 0
@@ -3038,6 +3010,11 @@ Prefab:
       propertyPath: BuildingName
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010961582912, guid: 3b1259b9b1bed2840a21c2162d53b949,
+        type: 2}
+      propertyPath: BuildingMenuHider
+      value: 
+      objectReference: {fileID: 2038750730}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b1259b9b1bed2840a21c2162d53b949, type: 2}
   m_IsPrefabParent: 0
@@ -3696,8 +3673,8 @@ RectTransform:
   m_Children:
   - {fileID: 349123346}
   - {fileID: 1187682438}
-  - {fileID: 2122529941}
   - {fileID: 1743149534}
+  - {fileID: 2122529941}
   m_Father: {fileID: 1925915380}
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3956,7 +3933,7 @@ RectTransform:
   m_Children:
   - {fileID: 1406876852}
   m_Father: {fileID: 1548013249}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -8.5, y: 145}
@@ -4742,6 +4719,35 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1987651315}
+--- !u!1 &2038750730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2038750731}
+  m_Layer: 0
+  m_Name: BuildButtonHider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2038750731
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2038750730}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -487, y: -237, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 814567655}
+  m_Father: {fileID: 2097155136}
+  m_RootOrder: 4
 --- !u!1 &2070107271
 GameObject:
   m_ObjectHideFlags: 0
@@ -5038,8 +5044,8 @@ RectTransform:
   - {fileID: 1904349450}
   - {fileID: 1175136269}
   - {fileID: 1459272712}
-  - {fileID: 814567655}
   - {fileID: 1079759113}
+  - {fileID: 2038750731}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
@@ -5090,7 +5096,7 @@ RectTransform:
   m_Children:
   - {fileID: 662800021}
   m_Father: {fileID: 1548013249}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -8.5, y: 180.5}

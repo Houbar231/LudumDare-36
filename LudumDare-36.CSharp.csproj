@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\GUI\BTN_build.cs" />
     <Compile Include="Assets\Scripts\GUI\HideOnStart.cs" />
     <Compile Include="Assets\Scripts\GUI\Money.cs" />
+    <Compile Include="Assets\Scripts\GUI\NewGame.cs" />
     <Compile Include="Assets\Scripts\Managers\Bullets.cs" />
     <Compile Include="Assets\Scripts\Managers\Enemy.cs" />
     <Compile Include="Assets\Scripts\Managers\Map.cs" />
