@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Bullets : MonoBehaviour {
     public static Bullets Instance;
@@ -18,7 +19,12 @@ public class Bullets : MonoBehaviour {
     }
     public void AllShoot() {
         foreach(BulletShooter360Dgr bs in ActiveBulletShooters) {
-            bs.Shoot();
+            bs.IsShooting = true;
+        }
+    }
+    public void AllStopShooting() {
+        foreach(BulletShooter360Dgr bs in ActiveBulletShooters) {
+            bs.IsShooting = false;
         }
     }
 }
@@ -29,7 +35,9 @@ public class BulletShooter360Dgr : Shooter{
     public float range = 10;
     public float AvgDmg = 50;
     public float DmgSpread = 10;
+    public float Firerate = 0.2f;
     public EnemyUnit Target = null;
+    public bool IsShooting = false;
 
 
     public BulletShooter360Dgr(int x, int y) {
@@ -47,6 +55,14 @@ public class BulletShooter360Dgr : Shooter{
             return true;
         }
         return false;
+    }
+    public IEnumerator Shooting() {
+        while (true) {
+            if(IsShooting) {
+                Shoot();
+                yield return new WaitForSeconds(Firerate);
+            }
+        }
     }
     public void Shoot() {
         if(Target != null && Random.Range(0,100) < 80) {
