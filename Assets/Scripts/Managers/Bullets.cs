@@ -5,42 +5,40 @@ public class Bullets : MonoBehaviour {
     public static Bullets Instance;
     void Awake() {
         Instance = this;
-        ActiveBulletShooters = new List<BulletShooter>();
+        ActiveBulletShooters = new List<BulletShooter360Dgr>();
     }
 
-    public List<BulletShooter> ActiveBulletShooters;
-    public BulletShooter CreateBS(int x, int y) {
-        BulletShooter bs = new BulletShooter(x, y);
-        ActiveBulletShooters.Add(bs);
-        return bs;
-    }
+    public List<BulletShooter360Dgr> ActiveBulletShooters;
     public void TryFindTargets() {
-        foreach(BulletShooter bs in ActiveBulletShooters) {
+        foreach(BulletShooter360Dgr bs in ActiveBulletShooters) {
             if(bs.Target == null) {
                 bs.FindTarget();
             }
         }
     }
     public void AllShoot() {
-        foreach(BulletShooter bs in ActiveBulletShooters) {
+        foreach(BulletShooter360Dgr bs in ActiveBulletShooters) {
             bs.Shoot();
         }
     }
 }
-public class BulletShooter {
+public interface Shooter { };
+public class BulletShooter360Dgr : Shooter{
     public int x, y;
+    public Sprite BuildingSprite;
     public float range = 10;
     public float AvgDmg = 50;
     public float DmgSpread = 10;
     public EnemyUnit Target = null;
 
 
-    public BulletShooter(int x, int y) {
+    public BulletShooter360Dgr(int x, int y) {
         this.x = x;
         this.y = y;
         GameObject GO = new GameObject("Tower");
         GO.AddComponent<SpriteRenderer>().sprite = SpriteReference.r.TowerSprite; //MAKESHIFT
         GO.transform.position = new Vector3(x, y, -0.001f); //MAKESHIFT
+        Bullets.Instance.ActiveBulletShooters.Add(this);
     }
     public bool FindTarget() {
         Target = Enemy.Instance.GetClosestUnit(x, y, range);

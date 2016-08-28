@@ -18,14 +18,12 @@ public class Map : MonoBehaviour {
                 Tiles[i, j] = new MapTile(i, j);
             }
         }
-        DestTile = Tiles[GeneralReference.r.Width/2, GeneralReference.r.Height/2];//MAKESHIFT
-        DestTile.TileGO.GetComponent<SpriteRenderer>().sprite = SpriteReference.r.Mainsprite;//MAKESHIFT
+        DestTile = Tiles[GeneralReference.r.Width / 2, GeneralReference.r.Height / 2];
         SetUpPathfinding();
         Enemy.Instance.ValidSpawnTiles = GetEdgeTiles();
-        for(int i = 0; i < 4; i++) {//MAKESHIFT
-            Enemy.Instance.SpawnEnemyUnit();//MAKESHIFT
-        }//MAKESHIFT
-        Bullets.Instance.CreateBS(GeneralReference.r.Width / 2+1, GeneralReference.r.Height / 2 + 1);//MAKESHIFT
+        for(int i = 0; i < 4; i++) {
+            Enemy.Instance.SpawnEnemyUnit();
+        }
     }
     public List<MapTile> GetEdgeTiles() {
         List<MapTile> ret = new List<MapTile>();

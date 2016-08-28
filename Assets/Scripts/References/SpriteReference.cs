@@ -9,7 +9,10 @@ public class SpriteReference : MonoBehaviour {
     public Sprite TowerSprite;
     public Sprite Mainsprite;
 
+
     void Awake() {
         r = this;
     }
+
+ 
 }
