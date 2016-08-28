@@ -10,7 +10,7 @@ public class Mouse : MonoBehaviour {
     public MapTile SelectedTile;
 
     void Update() {
-        //if(! EventSystem.current.IsPointerOverGameObject()) {
+        if(! EventSystem.current.IsPointerOverGameObject()) {
             Vector3 MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             int MouseX = Mathf.FloorToInt(MousePosition.x);
             int MouseY = Mathf.FloorToInt(MousePosition.y);
@@ -18,7 +18,7 @@ public class Mouse : MonoBehaviour {
             if(Input.GetMouseButtonDown(0) && MouseX >= 0 && MouseX < GeneralReference.r.Width && MouseY >= 0 && MouseY < GeneralReference.r.Height) {
                 SelectedTile = Map.Instance.Tiles[MouseX, MouseY];
             }
-        //}
+        }
         if(gameObject.transform.Find("Selector") != null) {
             Destroy(gameObject.transform.Find("Selector").gameObject);
         }

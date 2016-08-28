@@ -54,7 +54,7 @@ public class EnemyUnit {
 
     public EnemyUnit(int x, int y) {
         GO = new GameObject("Enemy");
-        GO.transform.position = new Vector3(x, y, -0.001f);
+        GO.transform.position = new Vector3(x, y);
         GO.AddComponent<SpriteRenderer>().sprite = SpriteReference.r.Enemysprite;
         Data = new EnemyData(x, y);
     }
