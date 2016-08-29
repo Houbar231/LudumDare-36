@@ -26,6 +26,8 @@ GameObject:
   - 114: {fileID: 114000012750049698}
   - 114: {fileID: 114000012579870874}
   - 114: {fileID: 114000013135998144}
+  - 114: {fileID: 114000011530283560}
+  - 114: {fileID: 114000013908948926}
   m_Layer: 0
   m_Name: GO
   m_TagString: Untagged
@@ -46,6 +48,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000011530283560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010039596466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09213e8f742379a45990c58f0c970d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuildingTypes:
+  - Name: Ballista
+    Sprite: {fileID: 21300000, guid: bc47e7b2a7df61f4bbd6eea4736d3bc3, type: 3}
+    TileBlocker: 0
+    BulletShooter360Dgr: 1
+  - Name: Wall
+    Sprite: {fileID: 21300000, guid: 50e9326d58f668e428595de5311175b2, type: 3}
+    TileBlocker: 1
+    BulletShooter360Dgr: 0
 --- !u!114 &114000012579870874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57,8 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7bce7d5bc7d2724d82e342ae7d2de83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 9
-  Height: 9
+  Width: 19
+  Height: 19
 --- !u!114 &114000012750049698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,6 +118,7 @@ MonoBehaviour:
   Enemysprite: {fileID: 21300000, guid: 84eaa4df02bac854e84aed7128ee575d, type: 3}
   TowerSprite: {fileID: 21300000, guid: bc47e7b2a7df61f4bbd6eea4736d3bc3, type: 3}
   Mainsprite: {fileID: 21300000, guid: 1cb9c250cb3eb934692ad70e99c04ce2, type: 3}
+  SelSprite: {fileID: 21300000, guid: 522265b382fed3e42a1144c7b120bbb5, type: 3}
 --- !u!114 &114000013721483646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910c619d84974ef448de8d03af83fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildMenu: {fileID: 0}
 --- !u!114 &114000013848648558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,6 +140,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe0f812355657b94383dda678e63e26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemiesToReachDestToLose: 10
+--- !u!114 &114000013908948926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010039596466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3554d98835ca1ae42be94e05a552993a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114000014220002380
