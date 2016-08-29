@@ -63,25 +63,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DeathSound.cs" />
+    <Compile Include="Assets\Life.cs" />
     <Compile Include="Assets\Scripts\Building\BTN_CloseClick.cs" />
-    <Compile Include="Assets\Scripts\Building\Building.cs" />
-    <Compile Include="Assets\Scripts\Building\BuildingButton.cs" />
     <Compile Include="Assets\Scripts\Building\BuildingShop.cs" />
     <Compile Include="Assets\Scripts\Building\MoneyStatus.cs" />
     <Compile Include="Assets\Scripts\Building\ShowItemsInShop.cs" />
     <Compile Include="Assets\Scripts\Cams\CameraMove.cs" />
+    <Compile Include="Assets\Scripts\Click.cs" />
     <Compile Include="Assets\Scripts\DataTypes\MapTile.cs" />
+    <Compile Include="Assets\Scripts\Enemy Spawning Regulator\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Enemy Spawning Regulator\Timer.cs" />
     <Compile Include="Assets\Scripts\GUI\BTN_build.cs" />
     <Compile Include="Assets\Scripts\GUI\HideOnStart.cs" />
-    <Compile Include="Assets\Scripts\GUI\Money.cs" />
     <Compile Include="Assets\Scripts\GUI\NewGame.cs" />
+    <Compile Include="Assets\Scripts\Managers\Building.cs" />
+    <Compile Include="Assets\Scripts\Managers\BuildingUI.cs" />
     <Compile Include="Assets\Scripts\Managers\Bullets.cs" />
     <Compile Include="Assets\Scripts\Managers\Enemy.cs" />
     <Compile Include="Assets\Scripts\Managers\Map.cs" />
+    <Compile Include="Assets\Scripts\Managers\Money.cs" />
     <Compile Include="Assets\Scripts\Managers\Mouse.cs" />
     <Compile Include="Assets\Scripts\Managers\OneManagerToRuleThemAll.cs" />
+    <Compile Include="Assets\Scripts\Pause.cs" />
+    <Compile Include="Assets\Scripts\QuitGame.cs" />
     <Compile Include="Assets\Scripts\References\GeneralReference.cs" />
     <Compile Include="Assets\Scripts\References\SpriteReference.cs" />
+    <Compile Include="Assets\Scripts\SoundLoop.cs" />
+    <Compile Include="Assets\Sound.cs" />
+    <Compile Include="Assets\StartButton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
