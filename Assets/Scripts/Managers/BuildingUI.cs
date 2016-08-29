@@ -42,9 +42,35 @@ public class BuildingUI : MonoBehaviour {
                     Map.Instance.SetUpPathfinding();
                 }
                 if(ToDemolish.Data.Type.BulletShooter360Dgr) {
-                    foreach(BulletShooter360Dgr s in Bullets.Instance.ActiveBulletShooters) {
-                        if(s.x == Tile.Data.x && s.y == Tile.Data.y)
-                            Bullets.Instance.ActiveBulletShooters.Remove(s);
+                    for(int i = 0; i < Bullets.Instance.ActiveBulletShooters.Count; i++) {
+                        BulletShooter360Dgr bs = Bullets.Instance.ActiveBulletShooters[i];
+                        if(bs.x == Tile.Data.x && bs.y == Tile.Data.y)
+                            Bullets.Instance.ActiveBulletShooters.Remove(bs);
+                    }
+                }
+                Destroy(ToDemolish.GO);
+                Building.Instance.Builds.Remove(ToDemolish);
+            }
+        }
+    }
+    public void DemolishBuilding(int x, int y) {
+        MapTile Tile = Map.Instance.Tiles[x, y];
+        if(Tile != null) {
+            Build ToDemolish = null;
+            foreach(Build b in Building.Instance.Builds) {
+                if(b.Data.x == Tile.Data.x && b.Data.y == Tile.Data.y)
+                    ToDemolish = b;
+            }
+            if(ToDemolish != null) {
+                if(ToDemolish.Data.Type.TileBlocker) {
+                    Map.Instance.Tiles[ToDemolish.Data.x, ToDemolish.Data.y].Data.IsWalkable = true;
+                    Map.Instance.SetUpPathfinding();
+                }
+                if(ToDemolish.Data.Type.BulletShooter360Dgr) {
+                    for(int i = 0; i < Bullets.Instance.ActiveBulletShooters.Count; i++) {
+                        BulletShooter360Dgr bs = Bullets.Instance.ActiveBulletShooters[i];
+                        if(bs.x == Tile.Data.x && bs.y == Tile.Data.y)
+                            Bullets.Instance.ActiveBulletShooters.Remove(bs);
                     }
                 }
                 Destroy(ToDemolish.GO);

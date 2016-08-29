@@ -23,7 +23,6 @@ public class Map : MonoBehaviour {
         DestTile = Tiles[GeneralReference.r.Width / 2, GeneralReference.r.Height/2];
         SetUpPathfinding();
         Enemy.Instance.ValidSpawnTiles = GetEdgeTiles();
-        Bullets.Instance.AllShoot();
     }
     public List<MapTile> GetEdgeTiles() {
         List<MapTile> ret = new List<MapTile>();
@@ -48,7 +47,7 @@ public class Map : MonoBehaviour {
             for(int i = Mathf.Max(ToBeSearchedNext.Data.x-1,0); i <= Mathf.Min(ToBeSearchedNext.Data.x+1, GeneralReference.r.Width-1); i++) {
                 for(int j = Mathf.Max(ToBeSearchedNext.Data.y - 1, 0); j <= Mathf.Min(ToBeSearchedNext.Data.y + 1, GeneralReference.r.Height-1); j++) {
                     if(! NextToDestTile.ContainsKey(Tiles[i,j])) {
-                        if(ToBeSearchedNext.Data.IsWalkable) {
+                        if(Tiles[i, j].Data.IsWalkable) {
                             NextToDestTile.Add(Tiles[i, j], ToBeSearchedNext);
                             ToBeSearched.Enqueue(Tiles[i, j]);
                         }

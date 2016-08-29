@@ -26,7 +26,6 @@ public class Mouse : MonoBehaviour {
         }
         if(SelectedTile != null) {
             GameObject Sel = new GameObject("Selector");
-            Debug.Log(SelectedTile.TileGO.name);
             Sel.transform.position = SelectedTile.TileGO.transform.position + new Vector3(0, 0, -0.1f);
             Sel.AddComponent<SpriteRenderer>().sprite = SpriteReference.r.SelSprite;
             Sel.transform.SetParent(gameObject.transform);

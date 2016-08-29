@@ -118,7 +118,7 @@ MonoBehaviour:
   Enemysprite: {fileID: 21300000, guid: 84eaa4df02bac854e84aed7128ee575d, type: 3}
   TowerSprite: {fileID: 21300000, guid: bc47e7b2a7df61f4bbd6eea4736d3bc3, type: 3}
   Mainsprite: {fileID: 21300000, guid: 1cb9c250cb3eb934692ad70e99c04ce2, type: 3}
-  SelSprite: {fileID: 21300000, guid: 522265b382fed3e42a1144c7b120bbb5, type: 3}
+  SelSprite: {fileID: 21300000, guid: 1cb9c250cb3eb934692ad70e99c04ce2, type: 3}
 --- !u!114 &114000013721483646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010039596466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3554d98835ca1ae42be94e05a552993a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c14c9eb22ceadc4284e9a1ae29bf4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114000014220002380
