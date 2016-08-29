@@ -35,11 +35,11 @@ public class OneManagerToRuleThemAll : MonoBehaviour {
 
     }
 
-    public IEnumerator Every02Sec() {
+    public IEnumerator Every001Sec() {
         yield return new WaitForSeconds(1);
         while(IsRunning) {
-            
-            yield return new WaitForSeconds(0.2f);
+            Bullets.Instance.TryFindTargets();
+            yield return new WaitForSeconds(0.01f);
         }
     }
     public IEnumerator Every05Sec() {
@@ -52,7 +52,6 @@ public class OneManagerToRuleThemAll : MonoBehaviour {
     public IEnumerator Every1Sec() {
         yield return new WaitForSeconds(1);
         while(IsRunning) {
-            Bullets.Instance.TryFindTargets();
             Enemy.Instance.SpawnEnemyUnit();
             yield return new WaitForSeconds(1);
         }
@@ -62,7 +61,7 @@ public class OneManagerToRuleThemAll : MonoBehaviour {
         IsRunning = true;  
     }
     void Start() {
-        StartCoroutine(Every02Sec());
+        StartCoroutine(Every001Sec());
         StartCoroutine(Every05Sec());
         StartCoroutine(Every1Sec());
     }
