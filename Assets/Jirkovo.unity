@@ -5639,7 +5639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1746089159
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5698,7 +5698,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1442000516}
         m_MethodName: DemolishBuilding
         m_Mode: 1
         m_Arguments:
@@ -5958,6 +5958,7 @@ GameObject:
   - 114: {fileID: 1871080542}
   - 114: {fileID: 1871080541}
   - 114: {fileID: 1442000516}
+  - 114: {fileID: 1871080550}
   m_Layer: 0
   m_Name: GO
   m_TagString: Untagged
@@ -5980,10 +5981,12 @@ MonoBehaviour:
   BuildingTypes:
   - Name: Ballista
     Sprite: {fileID: 21300000, guid: bc47e7b2a7df61f4bbd6eea4736d3bc3, type: 3}
+    Price: 10
     TileBlocker: 0
     BulletShooter360Dgr: 1
   - Name: Wall
     Sprite: {fileID: 21300000, guid: 50e9326d58f668e428595de5311175b2, type: 3}
+    Price: 1
     TileBlocker: 1
     BulletShooter360Dgr: 0
 --- !u!114 &1871080542
@@ -6002,7 +6005,7 @@ MonoBehaviour:
   Enemysprite: {fileID: 21300000, guid: 84eaa4df02bac854e84aed7128ee575d, type: 3}
   TowerSprite: {fileID: 21300000, guid: bc47e7b2a7df61f4bbd6eea4736d3bc3, type: 3}
   Mainsprite: {fileID: 21300000, guid: 1cb9c250cb3eb934692ad70e99c04ce2, type: 3}
-  SelSprite: {fileID: 21300000, guid: 522265b382fed3e42a1144c7b120bbb5, type: 3}
+  SelSprite: {fileID: 21300000, guid: 9a96745b5a5e06045b1c9d65167a4434, type: 3}
 --- !u!114 &1871080543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6093,6 +6096,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1871080550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871080540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb2390dc3f1f474795d7a1337a13afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyCount: 20
+  MoneyStatus: {fileID: 1175136270}
 --- !u!1 &1885919617
 GameObject:
   m_ObjectHideFlags: 0
@@ -7283,6 +7299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227708f6a1bc03a4399fc800d9f3299f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActualMoney: 50
   MoneyCounter: {fileID: 1175136270}
 --- !u!1 &2098240167
 GameObject:
