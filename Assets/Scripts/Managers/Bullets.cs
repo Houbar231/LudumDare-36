@@ -33,12 +33,11 @@ public class Bullets : MonoBehaviour {
 public interface Shooter { };
 public class BulletShooter360Dgr : Shooter{
     public int x, y;
-    public Sprite BuildingSprite;
-    public GameObject GO;
-    public float range = 10;
-    public float AvgDmg = 20;
+
+    public float range = 20;
+    public float AvgDmg = 110;
     public float DmgSpread = 10;
-    public float Firerate = 0.2f;
+    public float Firerate = 0.01f;
     public EnemyUnit Target = null;
     public bool IsShooting = false;
 
@@ -46,14 +45,11 @@ public class BulletShooter360Dgr : Shooter{
     public BulletShooter360Dgr(int x, int y) {
         this.x = x;
         this.y = y;
-        GO = new GameObject("Tower");
-        GO.AddComponent<SpriteRenderer>().sprite = SpriteReference.r.TowerSprite; //MAKESHIFT
-        GO.transform.position = new Vector3(x, y); //MAKESHIFT
         Bullets.Instance.ActiveBulletShooters.Add(this);
     }
     public bool FindTarget() {
         Target = Enemy.Instance.GetClosestUnit(x, y, range);
-        if(Target != null) {
+        if(Target != null && ! Target.IsDead) {
             Target.OnEnemyDie += (EnemyUnit) => { FindTarget(); };
             return true;
         }

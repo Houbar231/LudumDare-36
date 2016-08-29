@@ -8,13 +8,20 @@ public class Enemy : MonoBehaviour {
     public List<MapTile> ValidSpawnTiles;
     public List<EnemyUnit> EnemiesOnMap;
 
+    int EnemiesReachedDest;
+    public int EnemiesToReachDestToLose;
+
     void Awake() {
         Instance = this;
         //ValidSpawnTiles = new List<MapTile>();
         EnemiesOnMap = new List<EnemyUnit>();
     }
-    void Start() {
-
+    public void EnemyReachedDest() {
+        EnemiesReachedDest++;
+        if(EnemiesReachedDest >= EnemiesToReachDestToLose) {
+            //LOSE
+            Debug.Log("You lost.");
+        }
     }
     public void SpawnEnemyUnit() {
         MapTile SpawnTile = ValidSpawnTiles[UnityEngine.Random.Range(0, ValidSpawnTiles.Count)];
@@ -49,6 +56,8 @@ public class Enemy : MonoBehaviour {
 public class EnemyUnit {
     public event Action<EnemyUnit> OnEnemyDie;
 
+    public bool IsDead = false;
+
     public GameObject GO;
     public EnemyData Data;
 
@@ -59,21 +68,32 @@ public class EnemyUnit {
         Data = new EnemyData(x, y);
     }
     public void MoveToDest() {
-        if(Map.Instance.IsPathfindingComplete) {
-            if(Data.x != Map.Instance.DestTile.Data.x || Data.y != Map.Instance.DestTile.Data.y) {
-                GO.transform.position = new Vector3(Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.x, Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.y, -0.001f);
-                Data.x = Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.x;
-                Data.y = Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.y;
+        if(! IsDead) {
+            if(Map.Instance.IsPathfindingComplete) {
+                if(Data.x != Map.Instance.DestTile.Data.x || Data.y != Map.Instance.DestTile.Data.y) {
+                    GO.transform.position = new Vector3(Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.x, Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.y, -0.001f);
+                    Data.x = Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.x;
+                    Data.y = Map.Instance.NextToDestTile[Map.Instance.Tiles[Data.x, Data.y]].Data.y;
+                }
+                else {
+                    if(!IsDead) {
+                        Enemy.Instance.EnemyReachedDest();
+                        Die();
+                    }
+                }
             }
         }
     }
     public void TakeDamage(float Damage) {
         Data.Hitpoints -= Damage;
         if(Data.Hitpoints <= 0) {
-            OnEnemyDie(this);
-            GameObject.Destroy(GO);
-            Enemy.Instance.EnemiesOnMap.Remove(this);
+            Die();
         }
+    }
+    public void Die() {
+        if( OnEnemyDie != null ) OnEnemyDie(this);
+        GameObject.Destroy(GO);
+        IsDead = true;
     }
 }
 public class EnemyData {
