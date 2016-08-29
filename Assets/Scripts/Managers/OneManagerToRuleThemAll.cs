@@ -50,21 +50,26 @@ public class OneManagerToRuleThemAll : MonoBehaviour {
             yield return new WaitForSeconds(0.5f);
         }
     }
-    public IEnumerator Every1Sec() {
+    public IEnumerator EnemySpawn() {
         yield return new WaitForSeconds(1);
         while(IsRunning) {
-            //Enemy.Instance.SpawnEnemyUnit();
+            Enemy.Instance.SpawnEnemyUnit();
             yield return new WaitForSeconds(1);
         }
     }
     bool IsRunning;
+    void Awake() {
+        Instance = this;
+    }
     void OnEnable() {
         IsRunning = true;  
     }
     void Start() {
         StartCoroutine(Every001Sec());
         StartCoroutine(Every05Sec());
-        StartCoroutine(Every1Sec());
+    }
+    public void StartEnemySpawn() {
+        StartCoroutine(EnemySpawn());
     }
     void OnDisable() {
         IsRunning = false;

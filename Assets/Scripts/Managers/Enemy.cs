@@ -8,20 +8,13 @@ public class Enemy : MonoBehaviour {
     public List<MapTile> ValidSpawnTiles;
     public List<EnemyUnit> EnemiesOnMap;
 
-    int EnemiesReachedDest;
-    public int EnemiesToReachDestToLose;
-
     void Awake() {
         Instance = this;
         //ValidSpawnTiles = new List<MapTile>();
         EnemiesOnMap = new List<EnemyUnit>();
     }
     public void EnemyReachedDest() {
-        EnemiesReachedDest++;
-        if(EnemiesReachedDest >= EnemiesToReachDestToLose) {
-            //LOSE
-            Debug.Log("You lost.");
-        }
+        Life.Instance.SubtractLives(1);
     }
     public void SpawnEnemyUnit() {
         MapTile SpawnTile = ValidSpawnTiles[UnityEngine.Random.Range(0, ValidSpawnTiles.Count)];
@@ -93,8 +86,8 @@ public class EnemyUnit {
                 }
                 else {
                     if(!IsDead) {
-                        //Enemy.Instance.EnemyReachedDest();
-                        //Die();
+                        Enemy.Instance.EnemyReachedDest();
+                        Die();
                     }
                 }
             }
