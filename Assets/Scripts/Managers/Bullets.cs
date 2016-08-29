@@ -11,22 +11,17 @@ public class Bullets : MonoBehaviour {
 
     public List<BulletShooter360Dgr> ActiveBulletShooters;
     public void TryFindTargets() {
-        foreach(BulletShooter360Dgr bs in ActiveBulletShooters) {
+        for(int i = 0; i < ActiveBulletShooters.Count; i++) {
+            BulletShooter360Dgr bs = ActiveBulletShooters[i];
             if(bs.Target == null) {
                 bs.FindTarget();
             }
         }
     }
     public void AllShoot() {
-        foreach(BulletShooter360Dgr bs in ActiveBulletShooters) {
-            bs.IsShooting = true;
-            StartCoroutine(bs.Shooting());
-        }
-    }
-    public void AllStopShooting() {
-        foreach(BulletShooter360Dgr bs in ActiveBulletShooters) {
-            StopCoroutine(bs.Shooting());
-            bs.IsShooting = false;
+        for(int i = 0; i < ActiveBulletShooters.Count; i++) {
+            BulletShooter360Dgr bs = ActiveBulletShooters[i];
+            bs.Shoot();
         }
     }
 }
@@ -46,7 +41,6 @@ public class BulletShooter360Dgr : Shooter{
         this.x = x;
         this.y = y;
         Bullets.Instance.ActiveBulletShooters.Add(this);
-        Debug.Log("Shoot!");
     }
     public bool FindTarget() {
         Target = Enemy.Instance.GetClosestUnit(x, y, range);
@@ -56,17 +50,10 @@ public class BulletShooter360Dgr : Shooter{
         }
         return false;
     }
-    public IEnumerator Shooting() {
-        while (true) {
-            if(IsShooting) {
-                Shoot();
-                yield return new WaitForSeconds(Firerate);
-            }
-        }
-    }
     public void Shoot() {
         if(Target != null) {
             if(Random.Range(0, 100) < 80) {
+                Debug.Log("Shoot!");
                 Target.TakeDamage(Random.Range(AvgDmg - DmgSpread, AvgDmg + DmgSpread));
             }
         }

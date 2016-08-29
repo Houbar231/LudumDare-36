@@ -38,6 +38,7 @@ public class OneManagerToRuleThemAll : MonoBehaviour {
     public IEnumerator Every001Sec() {
         yield return new WaitForSeconds(1);
         while(IsRunning) {
+            Bullets.Instance.AllShoot();
             Bullets.Instance.TryFindTargets();
             yield return new WaitForSeconds(0.01f);
         }
