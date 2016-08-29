@@ -7,7 +7,7 @@ public class Life : MonoBehaviour {
     int Lives;
     void Awake() {
         Instance = this;
-        Lives = MaxLives-5;
+        Lives = MaxLives;
         DisplayLives();
     }
     public void DisplayLives() {

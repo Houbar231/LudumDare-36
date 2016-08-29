@@ -21,6 +21,7 @@ public class Map : MonoBehaviour {
             }
         }
         DestTile = Tiles[GeneralReference.r.Width / 2, GeneralReference.r.Height/2];
+        DestTile.TileGO.GetComponent<SpriteRenderer>().sprite = SpriteReference.r.Mainsprite;
         SetUpPathfinding();
         Enemy.Instance.ValidSpawnTiles = GetEdgeTiles();
     }

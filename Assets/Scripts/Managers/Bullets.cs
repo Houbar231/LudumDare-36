@@ -29,10 +29,10 @@ public interface Shooter { };
 public class BulletShooter360Dgr : Shooter{
     public int x, y;
 
-    public float range = 20;
-    public float AvgDmg = 110;
+    public float range = 5;
+    public float AvgDmg = 20;
     public float DmgSpread = 10;
-    public float Firerate = 0.01f;
+    public float Firerate = 0.4f;
     public EnemyUnit Target = null;
     public bool IsShooting = false;
 
