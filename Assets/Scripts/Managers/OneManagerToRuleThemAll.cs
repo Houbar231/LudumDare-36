@@ -53,7 +53,7 @@ public class OneManagerToRuleThemAll : MonoBehaviour {
     public IEnumerator Every1Sec() {
         yield return new WaitForSeconds(1);
         while(IsRunning) {
-            Enemy.Instance.SpawnEnemyUnit();
+            //Enemy.Instance.SpawnEnemyUnit();
             yield return new WaitForSeconds(1);
         }
     }

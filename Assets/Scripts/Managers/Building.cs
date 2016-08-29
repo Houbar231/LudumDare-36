@@ -56,6 +56,7 @@ public class BuildData {
 public class BuildType {
     public string Name;
     public Sprite Sprite;
+    public int Price;
 
     public bool TileBlocker;
     public bool BulletShooter360Dgr;

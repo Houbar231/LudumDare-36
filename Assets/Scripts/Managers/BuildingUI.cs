@@ -24,9 +24,12 @@ public class BuildingUI : MonoBehaviour {
             return;
         }
 
-        if(! Building.Instance.IsBuildingOnTile(Tile.Data.x, Tile.Data.y)) {
+        if(!Building.Instance.IsBuildingOnTile(Tile.Data.x, Tile.Data.y) && (Money.Instance.IsEnough(Type.Price))) {
             new Build(Tile.Data.x, Tile.Data.y, Type);
+            Money.Instance.SubtractMoney(Type.Price);
         }
+        else
+            Debug.Log("Not enough money");
     }
     public void DemolishBuilding() {
         MapTile Tile = Mouse.Instance.SelectedTile;
@@ -37,6 +40,7 @@ public class BuildingUI : MonoBehaviour {
                     ToDemolish = b;
             }
             if(ToDemolish != null) {
+                Money.Instance.AddMoney(ToDemolish.Data.Type.Price);
                 if(ToDemolish.Data.Type.TileBlocker) {
                     Map.Instance.Tiles[ToDemolish.Data.x, ToDemolish.Data.y].Data.IsWalkable = true;
                     Map.Instance.SetUpPathfinding();
