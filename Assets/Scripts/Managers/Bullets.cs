@@ -46,6 +46,7 @@ public class BulletShooter360Dgr : Shooter{
         this.x = x;
         this.y = y;
         Bullets.Instance.ActiveBulletShooters.Add(this);
+        Debug.Log("Shoot!");
     }
     public bool FindTarget() {
         Target = Enemy.Instance.GetClosestUnit(x, y, range);
